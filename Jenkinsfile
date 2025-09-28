@@ -44,7 +44,7 @@ pipeline {
         }
 
         stage("Copy to Remote Server") {
-            setps {
+            steps {
                 // Jenkins가 원격 서버에 SSH 접속할 수 있도록 ssh agent 사용
                 sshagent (credentials: [env.SSH_CREDENTIALS_ID]) {
                     // 원격 서버에 배포 디렉토리 생성 (없으면 새로 만듦)
